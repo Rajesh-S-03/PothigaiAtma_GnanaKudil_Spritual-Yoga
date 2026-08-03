@@ -1,0 +1,596 @@
+/* ================= ORGANIZATION ================= */
+
+.organization-section{
+
+    width:100%;
+    padding:90px 8%;
+    background:#faf9f5;
+
+}
+
+.organization-heading{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.organization-heading span{
+
+    color:#c68b18;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+}
+
+.organization-heading h2{
+
+    margin-top:15px;
+    font-size:46px;
+    color:#18472f;
+    font-family:"Playfair Display",serif;
+
+}
+
+.heading-line{
+
+    width:90px;
+    height:4px;
+    background:#d59a2d;
+    margin:20px auto;
+    border-radius:20px;
+
+}
+
+.organization-card{
+
+    max-width:1100px;
+    margin:0 auto 35px;
+    padding:40px;
+
+    background:#fff;
+
+    border-left:6px solid #d59a2d;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.organization-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.organization-card h3{
+
+    font-size:30px;
+    color:#18472f;
+    margin-bottom:20px;
+    font-family:"Playfair Display",serif;
+
+}
+
+.organization-card p{
+
+    font-size:17px;
+    line-height:2;
+    color:#555;
+    text-align:justify;
+
+}
+
+.organization-card ul{
+
+    margin-top:20px;
+    padding-left:25px;
+
+}
+
+.organization-card ul li{
+
+    margin-bottom:15px;
+    font-size:17px;
+    color:#555;
+    line-height:1.8;
+
+}
+
+.organization-card strong{
+
+    color:#18472f;
+
+}
+
+.organization-section{
+    padding:90px 8%;
+    background:#f8f8f5;
+}
+
+.organization-card{
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border-top:5px solid #d59a2d;
+}
+
+.organization-card h3{
+    font-size:30px;
+    color:#18472f;
+    margin-bottom:18px;
+    font-family:"Playfair Display",serif;
+}
+
+.organization-card p{
+    line-height:1.9;
+    color:#666;
+    text-align:justify;
+}
+
+/* Members */
+
+.member-card{
+    margin-top:25px;
+    padding:22px;
+    border-radius:12px;
+    background:#faf7ef;
+    border-left:5px solid #d59a2d;
+}
+
+.member-card h4{
+    color:#18472f;
+    margin-bottom:10px;
+}
+
+.member-card span{
+    display:block;
+    font-weight:600;
+    color:#333;
+}
+
+.member-card small{
+    display:block;
+    color:#999;
+    margin:6px 0 15px;
+}
+
+/* Advisors */
+
+.advisor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.advisor-card{
+    padding:25px;
+    background:#fffdf8;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.advisor-card:hover{
+    transform:translateY(-6px);
+}
+
+.advisor-card h4{
+    color:#18472f;
+    margin-bottom:10px;
+}
+
+.advisor-card span{
+    display:block;
+    font-weight:600;
+}
+
+.advisor-card small{
+    color:#888;
+}
+
+.advisor-card p{
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+
+.organization-heading h2{
+
+    font-size:32px;
+
+}
+
+.organization-card{
+
+    padding:25px;
+
+}
+
+.organization-card h3{
+
+    font-size:24px;
+
+}
+
+.organization-card p,
+.organization-card ul li{
+
+    font-size:16px;
+
+}
+
+}
+
+/* book section */
+.book-section{
+
+    padding:100px 8%;
+    background:#fffdf8;
+}
+
+.book-heading{
+
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+.book-heading span{
+
+    color:#c68b18;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.book-heading h2{
+
+    margin:15px 0;
+    font-size:44px;
+    color:#18472f;
+}
+
+.book-heading p{
+
+    color:#666;
+    line-height:1.8;
+}
+
+.book-container{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.book-image img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+.book-content h3{
+
+    font-size:34px;
+
+    color:#18472f;
+}
+
+.book-content p{
+
+    margin:25px 0;
+
+    line-height:2;
+
+    color:#666;
+}
+
+.book-content ul{
+
+    margin:25px 0;
+
+    padding-left:20px;
+}
+
+.book-content li{
+
+    margin-bottom:15px;
+
+    color:#444;
+}
+
+.buy-book-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:16px 38px;
+
+    background:#c68b18;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.buy-book-btn:hover{
+
+    background:#18472f;
+}
+
+/* Feedback */
+
+.feedback-section{
+
+    padding:90px 8%;
+
+    background:#faf8f4;
+}
+
+.feedback-heading{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.feedback-heading span{
+
+    color:#c68b18;
+
+    font-weight:700;
+}
+
+.feedback-heading h2{
+
+    font-size:42px;
+
+    color:#18472f;
+}
+
+.feedback-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+}
+
+.feedback-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.feedback-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.feedback-card p{
+
+    line-height:1.9;
+
+    color:#666;
+}
+
+.feedback-card h4{
+
+    margin:20px 0 8px;
+
+    color:#f2b01e;
+
+    font-size:22px;
+}
+
+.feedback-card span{
+
+    font-weight:600;
+
+    color:#18472f;
+}
+
+
+@media (max-width:768px){
+
+.organization-section,
+.book-section,
+.feedback-section,
+.book-cta{
+    padding:60px 20px;
+}
+
+/* Heading */
+
+.organization-heading h2,
+.book-heading h2,
+.feedback-heading h2,
+.book-cta h2{
+    font-size:30px;
+}
+
+.organization-heading span,
+.book-heading span,
+.feedback-heading span{
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+/* Cards */
+
+.organization-card{
+    padding:22px;
+    border-radius:14px;
+}
+
+.organization-card h3{
+    font-size:22px;
+}
+
+.organization-card p,
+.organization-card li{
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* Member */
+
+.member-card{
+    padding:18px;
+}
+
+.member-card h4{
+    font-size:18px;
+}
+
+/* Advisors */
+
+.advisor-grid{
+    grid-template-columns:1fr;
+}
+
+.advisor-card{
+    padding:20px;
+}
+
+/* Book */
+
+.book-container{
+    grid-template-columns:1fr;
+    gap:35px;
+}
+
+.book-image img{
+    width:240px;
+}
+
+.book-content{
+    text-align:center;
+}
+
+.book-content h3{
+    font-size:28px;
+}
+
+.book-content p{
+    font-size:15px;
+}
+
+.book-content ul{
+    text-align:left;
+}
+
+.buy-book-btn{
+    width:100%;
+    padding:15px;
+}
+
+/* Feedback */
+
+.feedback-grid{
+    grid-template-columns:1fr;
+}
+
+.feedback-card{
+    padding:25px;
+}
+
+.feedback-card h4{
+    font-size:20px;
+}
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#18472f;
+    padding:22px 8%;
+    border-top:4px solid #d59a2d;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer p{
+    margin:0;
+    color:#f5f5f5;
+    font-size:15px;
+    letter-spacing:.3px;
+}
+
+.footer a{
+    color:#f2c04c;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+.footer{
+    padding:20px;
+}
+
+.footer-content{
+    flex-direction:column;
+    text-align:center;
+    gap:12px;
+}
+
+.footer p,
+.footer a{
+    font-size:14px;
+}
+
+}
+
+
+
+

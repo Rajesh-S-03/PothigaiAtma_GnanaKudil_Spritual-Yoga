@@ -1,0 +1,750 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-green: #2e7d32;
+  --dark-green: #183d2e;
+  --deep-green: #136040;
+  --light-bg: #f8f6f0;
+  --card-bg: #ffffff;
+  --text-muted: #52645a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  padding-top: 79px;
+}
+
+/*hero*/
+
+.b-content {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 70px 10%;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+ background: linear-gradient(
+  90deg,
+  rgba(0, 120, 55, 0.18) 0%,
+  rgba(18, 82, 50, 0.28) 48%,
+  rgba(7, 18, 25, 0.18) 100%
+);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 550px;
+  margin-left: 50%;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  margin-bottom: 12px;
+  color: #d9f1df;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  max-width: 560px;
+  margin-bottom: 28px;
+  color: #f1f7f2;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.hero-btn:hover {
+  color: var(--deep-green);
+  background: #ffffff;
+}
+
+/*body content */
+
+.about-preview {
+  padding: 60px 2%;
+  background: var(--light-bg);
+}
+
+.about-heading {
+  max-width: 850px;
+  margin: 15px auto 42px;
+  text-align: center;
+}
+
+.section-tag {
+  margin-bottom: 10px;
+  color: #278e2c;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.about-heading h2 {
+  margin-bottom: 16px;
+  color: var(--dark-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.25;
+}
+
+.about-description {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* yoga wave */
+
+.benefits {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 80px auto;
+  padding: 0 6%;
+}
+
+/* Yoga card */
+/* Main combined wellness section */
+.wellness-section {
+  width: min(1280px, 98%);
+  min-height: 560px;
+  margin: 85px auto;
+
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 72, 48, 0.16);
+}
+
+/* LEFT SIDE - Wave */
+.wellness-wave {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 65px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Green + water dim overlay */
+.wellness-wave-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(19, 22, 12, 0.3) 0%,
+    rgba(1, 84, 55, 0.5) 34%,
+    rgba(2, 46, 8, 0.38) 100%
+  );
+}
+
+/* Content above wave overlay */
+.wellness-wave-content {
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+  color: #ffffff;
+}
+
+.wellness-wave-content .wave-tag {
+  margin-bottom: 15px;
+  color: #d9ffe9;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.wellness-wave-content h2 {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.15;
+}
+
+.wellness-wave-content p:not(.wave-tag) {
+  max-width: 470px;
+  margin-bottom: 30px;
+  color: #effff7;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Nature sound button */
+.sound-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.sound-btn:hover {
+  background: #ffffff;
+  color: #176b4a;
+  transform: translateY(-3px);
+}
+
+.sound-btn small {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.play-icon {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+}
+
+.sound-btn:hover .play-icon {
+  background: #d9f7e8;
+}
+
+/* right side temple */
+.yoga-panel {
+  display: flex;
+  flex-direction: column;
+  background: #fbfdf9;
+}
+
+.yoga-image {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  display: block;
+}
+
+.yoga-content {
+  padding: 30px 34px 35px;
+}
+
+.benefits-tag {
+  margin-bottom: 10px;
+  color: #278e4b;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.yoga-content h2 {
+  margin-bottom: 14px;
+  color: #163f2c;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.yoga-description {
+  margin-bottom: 18px;
+  color: #52645a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.yoga-list {
+  display: grid;
+  gap: 11px;
+
+  margin: 0 0 24px;
+  padding-left: 20px;
+
+  color: #385243;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.yoga-list li::marker {
+  color: #238a4c;
+  font-size: 18px;
+}
+
+.benefits-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 8px;
+
+  background: #1d7a43;
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.benefits-btn:hover {
+  background: #115a2e;
+  transform: translateY(-2px);
+}
+
+.benefits-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* mobile view*/
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding: 10px 18px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-text {
+    margin-left: 0;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    margin: 60px auto;
+  }
+
+  .wave {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    min-height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+  }
+
+  .nav-icons {
+    margin-left: auto;
+  }
+
+  .container {
+    padding-top: 140px;
+  }
+
+  .b-content {
+    min-height: 460px;
+    padding: 55px 7%;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .nav-icons {
+    gap: 8px;
+  }
+
+  .whatsapp-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .lang-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .benefits {
+    padding: 0 5%;
+  }
+
+  .wave {
+    min-height: 380px;
+    padding: 30px 24px;
+  }
+
+  .benefits-card-contents {
+    padding: 20px;
+  }
+}
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:992px){
+
+.wellness-section{
+    width:95%;
+    grid-template-columns:1fr;
+    min-height:auto;
+}
+
+.wellness-wave{
+    min-height:430px;
+    padding:50px 40px;
+}
+
+.wellness-wave-content{
+    max-width:100%;
+}
+
+.wellness-wave-content h2{
+    font-size:42px;
+}
+
+.yoga-panel{
+    flex-direction:column;
+}
+
+.yoga-image{
+    height:300px;
+}
+
+.yoga-content{
+    padding:35px;
+}
+
+.hero-text{
+    margin-left:0;
+    max-width:100%;
+}
+
+.b-content{
+    padding:60px 7%;
+}
+
+.hero-text h1{
+    font-size:46px;
+}
+
+.hero-text p{
+    font-size:17px;
+}
+
+}
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.container{
+    padding-top:72px; 
+}
+
+.b-content{
+    min-height:420px;
+    padding:40px 20px;
+}
+
+.hero-overlay{
+    background:rgba(0,0,0,.35);
+}
+
+.hero-text{
+    margin:0;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:34px;
+    line-height:1.3;
+}
+
+.hero-text p{
+    font-size:15px;
+}
+
+.hero-btn{
+    padding:12px 22px;
+}
+
+/* Wellness */
+
+.wellness-section{
+
+    width:94%;
+    margin:50px auto;
+    grid-template-columns:1fr;
+    border-radius:18px;
+
+}
+
+.wellness-wave{
+
+    min-height:340px;
+    padding:30px 22px;
+
+}
+
+.wellness-wave-content{
+
+    text-align:center;
+    max-width:100%;
+
+}
+
+.wave-tag{
+
+    font-size:12px;
+
+}
+
+.wellness-wave-content h2{
+
+    font-size:30px;
+    margin-bottom:14px;
+
+}
+
+.wellness-wave-content p{
+
+    font-size:15px;
+    line-height:1.7;
+
+}
+
+.sound-btn{
+
+    width:100%;
+    justify-content:center;
+    padding:14px;
+
+}
+
+.play-icon{
+
+    width:38px;
+    height:38px;
+
+}
+
+/* Right */
+
+.yoga-image{
+
+    height:230px;
+
+}
+
+.yoga-content{
+
+    padding:25px 20px;
+    text-align:center;
+
+}
+
+.yoga-content h2{
+
+    font-size:26px;
+
+}
+
+.yoga-description{
+
+    font-size:15px;
+
+}
+
+.yoga-list{
+
+    padding-left:18px;
+    text-align:left;
+
+}
+
+.benefits-btn{
+
+    width:100%;
+    justify-content:center;
+
+}
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width:480px){
+
+.hero-text h1{
+    font-size:28px;
+}
+
+.hero-text p{
+    font-size:14px;
+}
+
+.wellness-wave{
+    min-height:300px;
+    padding:25px 18px;
+}
+
+.wellness-wave-content h2{
+    font-size:26px;
+}
+
+.wellness-wave-content p{
+    font-size:14px;
+}
+
+.sound-btn{
+
+    font-size:14px;
+    padding:12px;
+
+}
+
+.sound-btn small{
+    font-size:11px;
+}
+
+.yoga-image{
+
+    height:190px;
+
+}
+
+.yoga-content{
+
+    padding:20px 18px;
+
+}
+
+.yoga-content h2{
+
+    font-size:22px;
+
+}
+
+.yoga-description,
+.yoga-list{
+
+    font-size:14px;
+
+}
+
+.benefits-btn{
+
+    width:100%;
+    font-size:14px;
+
+}
+
+.about-preview{
+
+    padding:40px 5%;
+
+}
+
+.about-heading h2{
+
+    font-size:28px;
+
+}
+
+.about-description{
+
+    font-size:15px;
+
+}
+
+}
