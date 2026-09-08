@@ -23,8 +23,42 @@ import studentTrainingImg from "../../assets/students2.png";
 import healthSupportImg from "../../assets/health.png";
 import greeneryImg from "../../assets/green.jpeg";
 import { Link } from "react-router-dom";
-
+import emailjs from "@emailjs/browser";
 const Hcontent3 = () => {
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    city: e.target.city.value,
+    message:
+      "I am interested in learning more about your programs and would like to get in touch with your team. Please contact me at your earliest convenience.",
+  };
+
+  try {
+    await emailjs.send(
+      "service_9s8ui68",
+      "template_suosx7h",
+      formData,
+      "YM4b6nUa_P6PBJ-mY"
+    );
+
+    alert("Registration submitted successfully!");
+
+    e.target.reset();
+  } catch (error) {
+  console.error("EmailJS Error:", error);
+
+  alert(
+    `Failed to send registration.\n\nStatus: ${
+      error?.status || "Unknown"
+    }\nMessage: ${error?.text || error?.message || "Unknown error"}`
+  );
+}
+};
   const socialActivities = [
     {
       title: "Annadhanam Service",
@@ -261,7 +295,7 @@ const Hcontent3 = () => {
     <h3>Register Your Interest</h3>
     <p>Fill in your details and our team will contact you.</p>
 
-    <form className="register-form" id="register">
+    <form className="register-form" id="register" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="name">Full Name</label>
         <input
@@ -433,9 +467,9 @@ const Hcontent3 = () => {
           Reserved.
         </p>
 
-        <p>
+        {/* <p>
           Designed by <span>❤</span><a href="https://oramate.com/"> Oramate Technology</a>
-        </p>
+        </p> */}
       </div>
 
       <button

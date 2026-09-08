@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./About.css";
 import Navbar from "../Components/HomePageComponents/Navbar";
 
-import founder1 from "../assets/panjapoothaimg.jpg";
-import founder2 from "../assets/y2.jpg";
-import founder3 from "../assets/y6.jpg";
+import founder1 from "../assets/vamuskar.jpeg";
+import founder2 from "../assets/vamuskar.jpeg";
+import founder3 from "../assets/vamuskar.jpeg";
 import Ac1 from "../Components/AboutPageComponents/Ac1";
 
 const About = () => {

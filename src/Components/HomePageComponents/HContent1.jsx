@@ -6,6 +6,7 @@ import './HContent.css'
 import {FaBookOpen, FaHandHoldingHeart,} from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import { FaPeopleGroup,FaPersonPraying } from "react-icons/fa6";
+import { GiMeditation } from "react-icons/gi";
 import { MdGroups } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -14,12 +15,12 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-import kamuskarimg from '../../assets/sooryakalaimg.jpg'
+import kamuskarimg from '../../assets/vamuskar.jpeg'
 import schoolTrainingImg from "../../assets/nathantha.jpg";
-import pasumaiImg from "../../assets/panjapoothaimg1.jpg";
-import annadhanamImg from "../../assets/sooryakalaimg.jpg";
-import blanketImg from "../../assets/sooryakalaimg.jpg";
-import onlineClassImg from "../../assets/sooryakalaimg.jpg";
+import pasumaiImg from "../../assets/green.jpeg";
+import annadhanamImg from "../../assets/food2.png";
+import blanketImg from "../../assets/help1.png";
+import onlineClassImg from "../../assets/onlineclass1.jpg";
 import meditationImg from "../../assets/sooryakalaimg.jpg";
 import Hcontent2 from './Hcontent2';
 
@@ -99,10 +100,10 @@ const nextEvent = () => {
     <div className='Hcontent1-container'>
        <div className="service-logos">
   <div className="service-card">
-    <FaPersonPraying className="service-card-logo" />
+    <GiMeditation className="service-card-logo" />
 
     <div className="contents">
-      <h3>Prayer & Yoga</h3>
+      <h3>Yogam & Meditation</h3>
       <p>
         Find inner peace through guided prayer and move closer to calmness,
         faith, and balance.
@@ -170,7 +171,7 @@ const nextEvent = () => {
       <div className="vision-contents">
         <span className="vision-small-title">SPIRITUAL GUIDE</span>
 
-        <h3>Pothigai Siddhar</h3>
+        {/* <h3>Pothigai Siddhar</h3> */}
 
         <div className="small-line"></div>
 

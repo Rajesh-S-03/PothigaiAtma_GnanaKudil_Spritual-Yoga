@@ -1,11 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/Yoga  (1).png";
-import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaBars,
+  FaTimes,
+  FaGlobe,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Google Translate function
+    window.googleTranslateElementInit = () => {
+      if (
+        window.google &&
+        window.google.translate &&
+        document.getElementById("google_translate_element")
+      ) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,ta,hi,te,ml",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    };
+
+    // Load Google Translate script
+    const script = document.createElement("script");
+
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -14,19 +55,29 @@ const Navbar = () => {
   return (
     <nav className="navbar">
 
+      {/* ================= BRAND ================= */}
+
       <div className="brand">
+
         <img
           src={logo}
-          alt="Pothigai Atma Gnana Kudil"
+          alt="Amirthalogam"
           className="brand-logo"
         />
 
-        <NavLink to="/" className="logo" onClick={closeMenu}>
-          Pothigai Atma Gnana Kudil
+        <NavLink
+          to="/"
+          className="logo"
+          onClick={closeMenu}
+        >
+          Amirthalogam
         </NavLink>
+
       </div>
 
-      {/* Hamburger */}
+
+      {/* ================= HAMBURGER ================= */}
+
       <div
         className="mobile-menu"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -34,7 +85,9 @@ const Navbar = () => {
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
-      {/* Navigation */}
+
+      {/* ================= NAVIGATION ================= */}
+
       <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
 
         <li>
@@ -67,13 +120,28 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        {/* Mobile Only */}
+        <li>
+          <NavLink to="/gallery" onClick={closeMenu}>
+            Gallery
+          </NavLink>
+        </li>
+
+
+        {/* ================= MOBILE ================= */}
+
         <li className="mobile-extra">
 
-          <div className="language-switch">
-            <button className="lang-btn active">தமிழ்</button>
-            <button className="lang-btn">English</button>
+          <div className="language-container">
+
+            <FaGlobe className="language-icon" />
+
+            <div
+              id="google_translate_element"
+              className="google-translate"
+            ></div>
+
           </div>
+
 
           <a
             href="https://wa.me/919999999999"
@@ -88,13 +156,22 @@ const Navbar = () => {
 
       </ul>
 
-      
+
+      {/* ================= DESKTOP ================= */}
+
       <div className="desktop-icons">
 
-        <div className="language-switch">
-          <button className="lang-btn active">தமிழ்</button>
-          <button className="lang-btn">English</button>
+        <div className="language-container">
+
+          <FaGlobe className="language-icon" />
+
+          <div
+            id="google_translate_element"
+            className="google-translate"
+          ></div>
+
         </div>
+
 
         <a
           href="https://wa.me/919999999999"

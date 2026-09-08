@@ -1,4 +1,801 @@
+/* =====================================
+   EVENTS PAGE
+===================================== */
 
+.events-page {
+  width: 100%;
+  overflow: hidden;
+  background: #faf9f5;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.events-hero {
+  position: relative;
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      rgba(25, 18, 10, 0.68),
+      rgba(25, 18, 10, 0.72)
+    ),
+    url("/events-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+}
+
+.events-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+  padding: 30px;
+}
+
+.events-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #d4af37;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.events-hero h1 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.1;
+
+  font-weight: 500;
+}
+
+.events-hero h1 strong {
+  color: #d4af37;
+  font-weight: 700;
+}
+
+.events-hero p {
+  max-width: 650px;
+
+  margin: 25px auto 35px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.events-hero-btn {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 25px;
+
+  border: 1px solid #d4af37;
+  border-radius: 5px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.events-hero-btn span {
+  font-size: 18px;
+}
+
+.events-hero-btn:hover {
+  background: #d4af37;
+  color: #222;
+}
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+.events-intro {
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 100px 25px 70px;
+
+  text-align: center;
+}
+
+.events-intro > span,
+.section-title > span {
+  color: #a87832;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.events-intro h2,
+.section-title h2 {
+  margin: 15px 0;
+
+  color: #29251f;
+
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.events-intro h2 strong,
+.section-title h2 strong {
+  color: #8b1e2d;
+  font-weight: 700;
+}
+
+.events-intro p,
+.section-title p {
+  color: #777;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* =====================================
+   UPCOMING EVENTS
+===================================== */
+
+.upcoming-events {
+  padding: 50px 6% 100px;
+}
+
+.section-title {
+  max-width: 750px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+
+/* =====================================
+   NEXT EVENT
+===================================== */
+
+.next-event {
+  max-width: 1100px;
+
+  margin: 0 auto 60px;
+
+  padding: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  border-radius: 15px;
+
+  background: #30261d;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.next-event-content {
+  max-width: 550px;
+}
+
+.next-event-label {
+  color: #d4af37;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.next-event h3 {
+  margin: 12px 0;
+
+  color: #fff;
+
+  font-size: 30px;
+}
+
+.next-event p {
+  margin: 0;
+
+  color: #c9c2b9;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =====================================
+   COUNTDOWN
+===================================== */
+
+.countdown {
+  display: flex;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.count-box {
+  width: 75px;
+  height: 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.count-box strong {
+  color: #d4af37;
+
+  font-size: 25px;
+}
+
+.count-box span {
+  margin-top: 4px;
+
+  color: #bdb5aa;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.event-live {
+  padding: 18px 25px;
+
+  border-radius: 8px;
+
+  background: #8b1e2d;
+
+  color: #fff;
+
+  font-weight: 700;
+}
+
+
+/* =====================================
+   EVENT GRID
+===================================== */
+
+.events-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =====================================
+   EVENT CARD
+===================================== */
+
+.event-card {
+  display: flex;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(0, 0, 0, 0.07);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+  transition: 0.35s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+/* DATE */
+
+.event-date {
+  width: 125px;
+  min-width: 125px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #8b1e2d;
+  color: #fff;
+}
+
+.event-date strong {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.event-date span {
+  margin-top: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.event-date small {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+
+/* CONTENT */
+
+.event-content {
+  flex: 1;
+
+  padding: 25px;
+}
+
+.event-category {
+  color: #b07a2c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+.event-content h3 {
+  margin: 8px 0 10px;
+
+  color: #29251f;
+
+  font-size: 21px;
+}
+
+.event-content > p {
+  margin: 0 0 18px;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* INFO */
+
+.event-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  color: #666;
+
+  font-size: 12px;
+}
+
+.event-info div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.event-info span {
+  color: #8b1e2d;
+
+  font-size: 15px;
+}
+
+
+/* BUTTON */
+
+.register-btn {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 17px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #8b1e2d;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.register-btn span {
+  font-size: 16px;
+
+  transition: 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #6e1724;
+}
+
+.register-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =====================================
+   QUOTE
+===================================== */
+
+.events-quote {
+  padding: 100px 25px;
+
+  text-align: center;
+
+  background: #eee9df;
+}
+
+.quote-symbol {
+  color: #b07a2c;
+
+  font-size: 50px;
+
+  line-height: 1;
+}
+
+.events-quote blockquote {
+  max-width: 800px;
+
+  margin: 15px auto;
+
+  color: #41372c;
+
+  font-size: 28px;
+
+  line-height: 1.5;
+
+  font-style: italic;
+}
+
+.events-quote > span {
+  color: #8b1e2d;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================
+   PAST EVENTS
+===================================== */
+
+.past-events {
+  padding: 100px 6%;
+}
+
+.past-events-grid {
+  max-width: 1000px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.past-event-card {
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  background: #fff;
+
+  border: 1px solid rgba(0, 0, 0, 0.07);
+
+  border-radius: 10px;
+
+  transition: 0.3s ease;
+}
+
+.past-event-card:hover {
+  transform: translateY(-5px);
+}
+
+.past-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3ead8;
+
+  color: #b07a2c;
+
+  font-size: 20px;
+}
+
+.past-event-card span {
+  color: #a87832;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.past-event-card h3 {
+  margin: 5px 0;
+
+  color: #302a24;
+
+  font-size: 15px;
+}
+
+.past-event-card p {
+  margin: 0;
+
+  color: #999;
+
+  font-size: 11px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+  background: #1c1814;
+
+  padding: 30px 20px;
+}
+
+.footer-content {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer p {
+  margin: 0;
+
+  color: #aaa;
+
+  font-size: 12px;
+}
+
+.footer a {
+  color: #d4af37;
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+  .next-event {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .countdown {
+    width: 100%;
+  }
+
+  .count-box {
+    flex: 1;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .past-events-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .events-hero {
+    min-height: 500px;
+  }
+
+  .events-hero-content {
+    padding: 20px;
+  }
+
+  .events-hero h1 {
+    font-size: 40px;
+  }
+
+  .events-hero p {
+    font-size: 14px;
+  }
+
+  .events-intro {
+    padding: 70px 20px 50px;
+  }
+
+  .events-intro h2,
+  .section-title h2 {
+    font-size: 32px;
+  }
+
+  .upcoming-events {
+    padding: 40px 20px 70px;
+  }
+
+  .next-event {
+    padding: 25px;
+
+    gap: 25px;
+  }
+
+  .next-event h3 {
+    font-size: 24px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+
+  .count-box {
+    height: 70px;
+  }
+
+  .count-box strong {
+    font-size: 20px;
+  }
+
+  .event-card {
+    flex-direction: column;
+  }
+
+  .event-date {
+    width: 100%;
+    height: 85px;
+
+    flex-direction: row;
+
+    gap: 10px;
+  }
+
+  .event-date strong {
+    font-size: 35px;
+  }
+
+  .event-date span {
+    margin: 0;
+  }
+
+  .event-date small {
+    margin: 0;
+  }
+
+  .event-content {
+    padding: 22px;
+  }
+
+  .events-quote {
+    padding: 70px 20px;
+  }
+
+  .events-quote blockquote {
+    font-size: 21px;
+  }
+
+  .past-events {
+    padding: 70px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+}
 .footer{
     background:#18472f;
     padding:22px 8%;

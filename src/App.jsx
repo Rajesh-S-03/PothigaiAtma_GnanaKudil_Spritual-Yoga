@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import ScrollTop from './Components/ScrollTop'
 
 import { Routes,Router, Route } from 'react-router-dom'
+import Gc1 from './Components/Gallery/Gc1'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/trainings" element={ <TC1/>} />
       <Route path="/events" element={<Ec1/>} />
       <Route path="/activities" element={<SC1/>} />
+      <Route path="/gallery" element={<Gc1/>} />
     </Routes>
     </>
   )

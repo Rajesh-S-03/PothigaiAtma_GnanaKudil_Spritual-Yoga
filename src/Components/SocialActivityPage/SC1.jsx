@@ -11,10 +11,16 @@ import blanket2 from "../../assets/y2.jpg";
 import blanket3 from "../../assets/wave.png";
 import blanket4 from"../../assets/wave.png";
 
-import preg1 from "../../assets/wave.png";
+import preg1 from "../../assets/preg1.jpg";
 import preg2 from "../../assets/wave.png";
-import preg3 from "../../assets/wave.png";
+import preg3 from "../../assets/preg2.jpg";
 import preg4 from "../../assets/wave.png";
+
+import nat1 from "../../assets/nature1.webp";
+import nat2 from "../../assets/nature2.webp";
+import nat3 from "../../assets/nature3.webp";
+import nat4 from "../../assets/nature4.webp";
+
 
 const activities = [
   {
@@ -43,6 +49,14 @@ const activities = [
 
     images: [preg1, preg2, preg3, preg4],
   },
+  
+{
+  number: "04",
+  title: "Green & Nature Initiative",
+  content:
+    "Encouraging people to connect with nature through tree planting and greenery initiatives. By nurturing plants and protecting our natural surroundings, we create a healthier, greener, and more harmonious environment for future generations.",
+  images: [nat1, nat2, nat3, nat4],
+},
 ];
 
 export default function SC1() {

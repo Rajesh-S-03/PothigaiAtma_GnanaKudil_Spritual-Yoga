@@ -5,7 +5,7 @@ import "./Hcontent2.css";
 
 import panchaboothaImg from "../../assets/panjapoothaimg1.jpg";
 import suryaImg from "../../assets/yoga4.png";
-import chandraImg from "../../assets/y1.jpg";
+import chandraImg from "../../assets/chandrakalaT.webp";
 import nadhaanthaImg from "../../assets/nanthanaa.png";
 import aadharaImg from "../../assets/y.jpg";
 import uyirImg from "../../assets/yuirchaka.jpg";
@@ -13,8 +13,8 @@ import uyirImg from "../../assets/yuirchaka.jpg";
 // online class images
 
 import onlineTrainingImg1 from "../../assets/panjapoothaimg.jpg";
-import onlineTrainingImg2 from "../../assets/panjapoothaimg.jpg";
-import onlineTrainingImg3 from "../../assets/panjapoothaimg.jpg";
+import onlineTrainingImg2 from "../../assets/onlinetraning2.jpg";
+import onlineTrainingImg3 from "../../assets/onlinetraining1.jpg";
 import Hcontent3 from "./Hcontent3";
 
 const Hcontent2 = () => {
@@ -72,7 +72,7 @@ const Hcontent2 = () => {
         <h2>Discover the Path to Inner Growth</h2>
 
         <p>
-          Pothigai Atma Gnana Kudil offers spiritual training programs that
+          Amirthalogam offers spiritual training programs that
           guide individuals towards peace, discipline, self-awareness, and a
           balanced way of life.
         </p>

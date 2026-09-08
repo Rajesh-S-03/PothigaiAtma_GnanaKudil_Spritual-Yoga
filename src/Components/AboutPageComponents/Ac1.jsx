@@ -97,7 +97,7 @@ const Ac1 = () => {
 
     <div className="advisor-grid">
 
-      <div className="advisor-card">
+      {/* <div className="advisor-card">
         <h4>International Coordination</h4>
 
         <span>Thiru. Nachiyappan Ayya</span>
@@ -108,7 +108,7 @@ const Ac1 = () => {
           Oversees international devotee coordination and provides
           administrative guidance.
         </p>
-      </div>
+      </div> */}
 
       <div className="advisor-card">
         <h4>Finance & Audit Advisor</h4>
