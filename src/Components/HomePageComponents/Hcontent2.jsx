@@ -3,16 +3,16 @@ import { HashLink } from "react-router-hash-link";
 import React from "react";
 import "./Hcontent2.css";
 
-import panchaboothaImg from "../../assets/panjapoothaimg1.jpg";
+import panchaboothaImg from "../../assets/panchapoothaamirthayogam.jpeg";
 import suryaImg from "../../assets/yoga4.png";
-import chandraImg from "../../assets/chandrakalaT.webp";
+import chandraImg from "../../assets/moonm.jpg";
 import nadhaanthaImg from "../../assets/nanthanaa.png";
 import aadharaImg from "../../assets/y.jpg";
-import uyirImg from "../../assets/yuirchaka.jpg";
+import uyirImg from "../../assets/yuirchakra.jpg";
 
 // online class images
 
-import onlineTrainingImg1 from "../../assets/panjapoothaimg.jpg";
+import onlineTrainingImg1 from "../../assets/chakra.jpeg";
 import onlineTrainingImg2 from "../../assets/onlinetraning2.jpg";
 import onlineTrainingImg3 from "../../assets/onlinetraining1.jpg";
 import Hcontent3 from "./Hcontent3";
@@ -27,21 +27,21 @@ const Hcontent2 = () => {
       image: panchaboothaImg,
     },
     {
-      title: "Surya Kala Training",
+      title: "Surya Kaala Training",
       category: "Energy & Discipline",
       description:
         "A focused training program that encourages positive energy, discipline, clarity, and a stronger daily spiritual routine.",
       image: suryaImg,
     },
     {
-      title: "Chandra Kala Training",
+      title: "Chandra Kaala Training",
       category: "Peace & Emotional Balance",
       description:
         "A calming practice that supports peaceful thinking, emotional balance, self-awareness, and inner stillness.",
       image: chandraImg,
     },
     {
-      title: "Nadhaantha Training",
+      title: "Naadhaantha Training",
       category: "Inner Awareness Practice",
       description:
         "A spiritual training program that helps participants develop awareness through focused practice and inner reflection.",

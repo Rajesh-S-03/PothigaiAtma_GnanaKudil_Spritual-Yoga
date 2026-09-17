@@ -3,12 +3,12 @@ import "./TC1.css";
 import Navbar from "../HomePageComponents/Navbar";
 import { HashLink } from "react-router-hash-link";
 
-import panjapootha from "../../assets/panjapoothaimg.jpg";
+import panjapootha from "../../assets/panchapoothaamirthayogam.jpeg";
 import suryakala from "../../assets/sooryakalaimg.jpg";
-import chandrakala from "../../assets/chandrakalaT.webp";
+import chandrakala from "../../assets/moonm.jpg";
 import nandana from "../../assets/nanthanaa.png";
 import numerology from "../../assets/numerology.jpg";
-import chakra from "../../assets/chakra_awaking.jpg";
+import chakra from "../../assets/y.jpg";
 import uyirchakra from "../../assets/yuirchakra.jpg";
 import suryakantha from "../../assets/suryakanthayogam.jpg";
 import chandrakantha from "../../assets/chandrakantha.jpg";
@@ -34,7 +34,7 @@ const trainings = [
 
   {
     id: 2,
-    title: "Surya Kala Training",
+    title: "Surya Kaala Training",
     image: suryakala,
     description:
       "Surya Kala Training focuses on utilizing the positive energy of the sun to increase confidence, vitality, and mental strength. It combines breathing techniques, concentration, and energy practices for a healthy and balanced lifestyle.",
@@ -49,7 +49,7 @@ const trainings = [
 
   {
     id: 3,
-    title: "Chandra Kala Training",
+    title: "Chandra Kaala Training",
     image: chandrakala,
     description:
       "Chandra Kala Training utilizes the calming energy associated with the moon to relax the mind and body. This practice is ideal for reducing stress, improving emotional balance, and enhancing mental clarity.",
@@ -64,10 +64,10 @@ const trainings = [
 
   {
     id: 4,
-    title: "Nadantha Training",
+    title: "Naadhaantha Training",
     image: nandana,
     description:
-      "Nadantha Training is based on sacred sound vibrations that improve concentration, meditation, and self-awareness. Participants experience deep relaxation through spiritual sound practices.",
+      "Naadhaantha  Training is based on sacred sound vibrations that improve concentration, meditation, and self-awareness. Participants experience deep relaxation through spiritual sound practices.",
 
     benefits: [
       "Improves concentration.",
@@ -171,7 +171,7 @@ const trainings = [
 const Tc1 = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="training-page">
 
@@ -186,12 +186,53 @@ const Tc1 = () => {
           <h1>Training Programs</h1>
 
           <p>
-            Pothigai Atma Gnana Kudil offers spiritual and wellness training
+            Amirthalogam offers spiritual and wellness training
             programs designed to improve physical health, mental peace,
             self-awareness, and holistic living through yoga, meditation,
             breathing practices, and value-based education.
+            
           </p>
+          <br></br>
 
+<div className="mantra" translate="no">
+  <div className="mantra-line main-mantra">
+    ஓம் ஸ்ரீ குருவே சரணம்
+  </div>
+
+  <div className="mantra-small">
+    🙏 நற்பவி 🙏
+  </div>
+
+  <div className="mantra-line">
+    🌸 ஓம் ஸ்ரீ அகத்தீசாய நமோ நமஹா 🌸
+  </div>
+
+  <div className="mantra-poem">
+    <p>அன்பில் உறை அமிர்தம் போற்றி</p>
+    <p>அமைதியில் உறை அமிர்தம் போற்றி</p>
+    <p>ஆனந்தத்தில் உறை அமிர்தம் போற்றி</p>
+    <p>ஆழ்நிம்மதியில் நிறை அமிர்தம் போற்றி போற்றியே</p>
+
+    <br />
+
+    <p>அறிவை மகிழ்த்தும் சூரியாமிர்தம் போற்றி</p>
+    <p>மனதை மகிழ்த்தும் சந்திராமிர்தம் போற்றி</p>
+    <p>ஞானத்தை மகிழ்த்தும் புவியமிர்தம் போற்றி</p>
+    <p>உயிரை மகிழ்த்தும் வாலாமிர்தம் போற்றி போற்றியே</p>
+  </div>
+
+  <div className="mantra-line">
+    🌸 ஓம் கம் கணபதியே நம 🌸
+  </div>
+
+  <div className="mantra-line">
+    🌸 ஓம் சத்குரு ஸ்ரீ காகபுஜண்டர் தேவாய நமஹ 🌸
+  </div>
+
+  <div className="mantra-line last-mantra">
+    🌸 ஓம் அனைத்து சித்த ரிஷி குருமார்களும் போற்றி போற்றியே 🌸
+  </div>
+</div>
         </div>
 
 
@@ -282,7 +323,7 @@ const Tc1 = () => {
             </h2>
 
             <p>
-              Pothigai Atma Gnana Kudil offers many additional training
+              Amirthalogam offers many additional training
               programs designed to support holistic well-being, spiritual
               growth, self-awareness, meditation, yoga, energy practices,
               and a balanced lifestyle. Join us to explore these unique
@@ -295,7 +336,7 @@ const Tc1 = () => {
 
             {/* ================= BUTTONS ================= */}
 
-            <div className="more-btns">
+            {/* <div className="more-btns">
 
               <a
                 href="#register"
@@ -312,7 +353,7 @@ const Tc1 = () => {
                 ✨ Register Now
               </HashLink>
 
-            </div>
+            </div> */}
 
           </div>
 
@@ -328,12 +369,12 @@ const Tc1 = () => {
         <div className="footer-content">
 
           <p>
-            © {new Date().getFullYear()} Pothigai Atma Gnana Kudil.
+            © {new Date().getFullYear()} Amirthalogam
             All Rights Reserved.
           </p>
 
-          <a href="mailto:info@pothigaiatma.org">
-            ✉ info@pothigaiatma.org
+          <a href="mailto:amirthalogam@gmail.com">
+            ✉ amirthalogam@gmail.com
           </a>
 
         </div>

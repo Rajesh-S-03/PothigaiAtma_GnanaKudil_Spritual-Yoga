@@ -950,3 +950,226 @@
     }
 
 }
+/* =========================================================
+   MANTRA BOX
+========================================================= */
+
+.mantra {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 35px auto 0;
+    padding: 38px 35px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf4,
+            #f8efd0,
+            #fffdf5
+        );
+
+    border: 2px solid #d8a93d;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10),
+        inset 0 0 25px rgba(216, 169, 61, 0.08);
+
+    color: #5a4320;
+
+    overflow: hidden;
+}
+
+
+/* Decorative top line */
+
+.mantra::before {
+    content: "✦  ✧  ✦";
+
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #d8a93d;
+
+    font-size: 18px;
+    letter-spacing: 8px;
+}
+
+
+/* Decorative bottom line */
+
+.mantra::after {
+    content: "✦  ✧  ✦";
+
+    position: absolute;
+
+    bottom: 8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #d8a93d;
+
+    font-size: 16px;
+    letter-spacing: 8px;
+}
+
+
+/* Main mantra */
+
+.mantra-line {
+    margin: 16px 0;
+
+    color: #1d5a38;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* First mantra */
+
+.main-mantra {
+    margin-top: 15px;
+
+    color: #a66a00;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Small mantra */
+
+.mantra-small {
+    margin: 5px 0 20px;
+
+    color: #8b5e20;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* Main poem */
+
+.mantra-poem {
+    margin: 25px auto;
+
+    padding: 20px 15px;
+
+    border-top: 1px solid rgba(216, 169, 61, 0.45);
+    border-bottom: 1px solid rgba(216, 169, 61, 0.45);
+}
+
+
+.mantra-poem p {
+    margin: 7px 0;
+
+    color: #59452b;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* Last mantra */
+
+.last-mantra {
+    margin-bottom: 15px;
+}
+
+
+/* Hover effect */
+
+.mantra:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.13),
+        inset 0 0 30px rgba(216, 169, 61, 0.10);
+
+    transition: 0.3s ease;
+}
+@media (max-width: 768px) {
+
+    .mantra {
+        padding: 32px 18px;
+        border-radius: 20px;
+    }
+
+    .main-mantra {
+        font-size: 19px;
+    }
+
+    .mantra-line {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .mantra-small {
+        font-size: 15px;
+    }
+
+    .mantra-poem {
+        padding: 16px 8px;
+    }
+
+    .mantra-poem p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .mantra {
+        padding: 30px 12px;
+        margin-top: 25px;
+        border-radius: 18px;
+    }
+
+    .main-mantra {
+        font-size: 17px;
+    }
+
+    .mantra-line {
+        font-size: 13px;
+    }
+
+    .mantra-small {
+        font-size: 14px;
+    }
+
+    .mantra-poem p {
+        font-size: 12.5px;
+        line-height: 1.9;
+    }
+
+    .mantra::before,
+    .mantra::after {
+        font-size: 13px;
+        letter-spacing: 5px;
+    }
+}

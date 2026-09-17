@@ -1,138 +1,190 @@
-/* ================= NAVBAR ================= */
+/* =====================================================
+   AMIRTHALOGAM - NAVBAR
+===================================================== */
+
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 .navbar {
   width: 100%;
   min-height: 70px;
+
   padding: 10px 30px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
 
   background: #f4f2f2;
+
   border-bottom: 1px solid rgb(229, 200, 158);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12);
 
   position: fixed;
+
   top: 0;
   left: 0;
+
   z-index: 3000;
 }
 
 
-/* ================= BRAND ================= */
+/* =====================================================
+   BRAND
+===================================================== */
 
 .brand {
   display: flex;
   align-items: center;
+
   gap: 10px;
+
   flex-shrink: 0;
 }
+
 
 .brand-logo {
   width: 58px;
   height: 58px;
+
   object-fit: contain;
+
   display: block;
 }
 
+
 .logo {
   color: var(--primary-green);
-  font-family: "Playfair Display", Georgia, serif;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
   font-size: 25px;
+
   font-weight: 600;
+
   letter-spacing: 0.2px;
+
   text-decoration: none;
+
   white-space: nowrap;
 
-  text-shadow: 0 1px 2px rgba(31, 92, 58, 0.16);
+  text-shadow:
+    0 1px 2px rgba(31, 92, 58, 0.16);
 
-  transition: color 0.25s ease, text-shadow 0.25s ease;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
 }
+
 
 .logo:hover {
   color: #0f4a2c;
-  text-shadow: 0 2px 5px rgba(31, 92, 58, 0.22);
+
+  text-shadow:
+    0 2px 5px rgba(31, 92, 58, 0.22);
 }
 
 
-/* ================= NAV LINKS ================= */
+/* =====================================================
+   NAV LINKS
+===================================================== */
 
 .nav-links {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 13px;
+
   list-style: none;
 
   flex: 1;
+
+  margin: 0;
+
+  padding: 0 20px;
 }
+
 
 .nav-links a {
   position: relative;
 
   display: block;
+
   padding: 8px 4px;
+
   margin-top: 7px;
 
   color: #1f6b3c;
+
   text-decoration: none;
 
   font-size: 16px;
+
   font-weight: 400;
 
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease;
 }
+
 
 .nav-links a::after {
   content: "";
 
   position: absolute;
+
   left: 4px;
+
   bottom: 2px;
 
   width: 0;
+
   height: 2px;
 
   background: #e0b854;
+
   border-radius: 3px;
 
-  transition: width 0.35s ease;
+  transition:
+    width 0.35s ease;
 }
+
 
 .nav-links a:hover {
   color: var(--primary-green);
 }
+
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: calc(100% - 8px);
 }
 
+
 .nav-links a.active {
   color: var(--primary-green);
+
   font-weight: 600;
 }
 
 
-/* ================= DESKTOP ================= */
-
-.desktop-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  flex-shrink: 0;
-}
-
-
-/* ================= LANGUAGE ================= */
+/* =====================================================
+   YOUR CUSTOM LANGUAGE SELECTOR
+===================================================== */
 
 .language-container {
   display: flex;
+
   align-items: center;
+  justify-content: center;
+
   gap: 7px;
 
   height: 38px;
@@ -140,88 +192,287 @@
   padding: 0 8px;
 
   border: 1px solid var(--primary-green);
+
   border-radius: 12px;
 
   background: #ffffff;
+
+  flex-shrink: 0;
+
+  order: 2;
 }
+
 
 .language-icon {
   color: var(--primary-green);
+
   font-size: 17px;
 
   flex-shrink: 0;
 }
 
 
-/* Google Translate */
+/* =====================================================
+   CUSTOM LANGUAGE DROPDOWN
 
-.google-translate {
-  display: flex;
-  align-items: center;
+   This is the dropdown shown to the user.
+   Google Translate's own dropdown is hidden.
+===================================================== */
+
+.custom-language-select {
+  width: auto;
+  min-width: 88px;
+
+  height: 30px;
+
+  padding: 4px 8px;
+
+  border: none !important;
+  outline: none !important;
+
+  border-radius: 6px;
+
+  background: transparent !important;
+
+  color: #1f6b3c !important;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  appearance: auto;
 }
 
 
-/* Google default text */
-
-.goog-te-gadget {
-  font-family: inherit !important;
-  font-size: 0 !important;
+.custom-language-select:hover {
+  color: var(--primary-green) !important;
 }
 
 
-/* Google dropdown */
+.custom-language-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-.goog-te-gadget .goog-te-combo {
-  margin: 0 !important;
 
-  padding: 6px 24px 6px 7px;
-
-  border: none;
-  outline: none;
-
-  background: transparent;
+.custom-language-select option {
+  background: #ffffff;
 
   color: #1f6b3c;
 
   font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
 
-  cursor: pointer;
+  font-size: 14px;
 }
 
 
-/* Remove Google top banner */
+/* =====================================================
+   GOOGLE TRANSLATE ENGINE
+===================================================== */
 
-.goog-te-banner-frame {
+/*
+   Google Translate is still loaded internally so it can
+   translate the website.
+
+   The user does NOT see Google's dropdown or branding.
+*/
+
+.google-translate-hidden {
+  position: absolute !important;
+
+  left: -99999px !important;
+  top: 0 !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+  opacity: 0 !important;
+
+  visibility: hidden !important;
+
+  pointer-events: none !important;
+}
+
+
+/* Hide Google's generated select */
+.google-translate-hidden .goog-te-combo,
+.goog-te-combo {
   display: none !important;
 }
 
-body {
-  top: 0 !important;
+
+/* =====================================================
+   GOOGLE TRANSLATE TOP BAR - COMPLETELY HIDDEN
+===================================================== */
+
+/*
+   IMPORTANT:
+   Google creates a top-level .skiptranslate element
+   containing the "Google / Translated to / Show original /
+   Options" bar.
+
+   This is the main fix for the screenshot problem.
+*/
+
+body > .skiptranslate {
+  display: none !important;
+
+  visibility: hidden !important;
+
+  opacity: 0 !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  max-width: 0 !important;
+  max-height: 0 !important;
+
+  overflow: hidden !important;
+
+  position: absolute !important;
+
+  top: -99999px !important;
+  left: -99999px !important;
 }
 
 
-/* ================= WHATSAPP ================= */
+/* Google translation banner iframe */
+iframe.goog-te-banner-frame,
+iframe.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+
+  visibility: hidden !important;
+
+  opacity: 0 !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  border: none !important;
+}
+
+
+/* Google balloon popup */
+.goog-te-balloon-frame {
+  display: none !important;
+
+  visibility: hidden !important;
+
+  opacity: 0 !important;
+}
+
+
+/* Google gadget / branding */
+.goog-te-gadget {
+  display: none !important;
+}
+
+
+/* Google branding span */
+.goog-te-gadget > span,
+.goog-te-gadget span[style] {
+  display: none !important;
+}
+
+
+/* Google menu frame */
+.goog-te-menu-frame {
+  z-index: 99999 !important;
+}
+
+
+/* =====================================================
+   REMOVE GOOGLE PAGE SHIFT
+===================================================== */
+
+html {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+body {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+
+  margin-top: 0 !important;
+}
+
+
+/* =====================================================
+   GOOGLE TOOLTIP / HIGHLIGHT
+===================================================== */
+
+.goog-tooltip {
+  display: none !important;
+}
+
+
+.goog-text-highlight {
+  background: transparent !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =====================================================
+   DESKTOP CONTROLS
+===================================================== */
+
+.desktop-icons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  order: 3;
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .whatsapp-link {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   text-decoration: none;
 }
 
+
 .whatsapp-logo {
   width: 40px;
+
   height: 40px;
 
   padding: 4px;
 
   color: var(--deep-green);
+
   background: #e3e3e0;
 
   border: 1px solid #90f094;
+
   border-radius: 10px;
 
   transition:
@@ -229,92 +480,187 @@ body {
     color 0.25s ease;
 }
 
+
 .whatsapp-logo:hover {
   background: var(--primary-green);
+
   color: #ffffff;
 }
 
 
-/* ================= MOBILE MENU ================= */
+/* =====================================================
+   MOBILE CONTROLS
+===================================================== */
+
+.mobile-top-controls {
+  display: none;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
 .mobile-menu {
   display: none;
 }
 
 
-/* Mobile extra hidden in desktop */
-
-.mobile-extra {
-  display: none;
-}
-
-
-/* ================= MOBILE ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 768px) {
 
   .navbar {
     height: 72px;
 
+    min-height: 72px;
+
     padding: 8px 10px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
+    gap: 6px;
   }
 
 
-  /* Brand */
+  /* ===================================================
+     BRAND
+  =================================================== */
 
   .brand {
     display: flex;
+
     align-items: center;
 
     gap: 8px;
 
     flex: 1;
+
     min-width: 0;
   }
 
+
   .brand-logo {
     width: 42px;
+
     height: 42px;
 
     flex-shrink: 0;
   }
 
+
   .logo {
     font-size: 15px;
+
     font-weight: 600;
+
     line-height: 1.2;
 
     flex: 1;
 
-    white-space: normal;
+    min-width: 0;
+
+    white-space: nowrap;
+
     overflow: hidden;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
   }
 
 
-  /* Hide desktop */
+  /* ===================================================
+     CUSTOM LANGUAGE SELECTOR
+  =================================================== */
+
+  .language-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    height: 35px;
+
+    padding: 0 5px;
+
+    border-radius: 9px;
+
+    flex-shrink: 0;
+
+    order: 2;
+  }
+
+
+  .language-icon {
+    font-size: 15px;
+  }
+
+
+  .custom-language-select {
+    min-width: 75px;
+
+    height: 29px;
+
+    padding: 4px 3px;
+
+    font-size: 12px;
+  }
+
+
+  .custom-language-select option {
+    font-size: 12px;
+  }
+
+
+  /* ===================================================
+     DESKTOP WHATSAPP HIDE
+  =================================================== */
 
   .desktop-icons {
     display: none;
   }
 
 
-  /* Hamburger */
+  /* ===================================================
+     MOBILE CONTROLS
+  =================================================== */
+
+  .mobile-top-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    flex-shrink: 0;
+
+    order: 3;
+  }
+
+
+  /* ===================================================
+     HAMBURGER
+  =================================================== */
 
   .mobile-menu {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 34px;
+
     height: 34px;
 
     font-size: 22px;
@@ -327,34 +673,46 @@ body {
   }
 
 
-  /* Side Menu */
+  /* ===================================================
+     MOBILE SIDE MENU
+  =================================================== */
 
   .nav-links {
     position: fixed;
 
     top: 72px;
+
     left: -100%;
 
     width: 260px;
+
     height: calc(100vh - 72px);
 
     background: #ffffff;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-start;
+
     justify-content: flex-start;
 
     padding: 25px;
 
     gap: 18px;
 
-    transition: 0.35s;
+    margin: 0;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition:
+      left 0.35s ease;
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.15);
 
     z-index: 999;
+
+    overflow-y: auto;
   }
 
 
@@ -365,6 +723,7 @@ body {
 
   .nav-links li {
     width: 100%;
+
     list-style: none;
   }
 
@@ -380,48 +739,31 @@ body {
   }
 
 
-  /* Mobile Extra */
+  /* ===================================================
+     MOBILE WHATSAPP
+  =================================================== */
 
-  .mobile-extra {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 18px;
-
-    margin-top: 20px;
-  }
-
-
-  /* Language */
-
-  .mobile-extra .language-container {
-    width: max-content;
-  }
-
-
-  /* WhatsApp */
-
-  .mobile-extra .whatsapp-link {
-    width: max-content;
+  .mobile-whatsapp-item {
+    display: block;
   }
 
 }
 
 
-/* ================= SMALL MOBILE ================= */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media (max-width: 480px) {
 
   .navbar {
-    padding: 8px 10px;
+    padding: 8px 8px;
   }
 
 
   .brand-logo {
     width: 36px;
+
     height: 36px;
   }
 
@@ -431,82 +773,72 @@ body {
   }
 
 
-  .nav-links {
-    width: 220px;
+  /* ===================================================
+     LANGUAGE SELECTOR
+  =================================================== */
+
+  .language-container {
+    height: 33px;
+
+    padding: 0 4px;
+
+    border-radius: 8px;
+
+    gap: 3px;
   }
 
 
+  .language-icon {
+    font-size: 14px;
+  }
+
+
+  .custom-language-select {
+    min-width: 68px;
+
+    height: 27px;
+
+    font-size: 11px;
+
+    padding: 4px 2px;
+  }
+
+
+  .custom-language-select option {
+    font-size: 11px;
+  }
+
+
+  /* ===================================================
+     HAMBURGER
+  =================================================== */
+
   .mobile-menu {
     width: 30px;
+
     height: 30px;
 
     font-size: 21px;
   }
 
 
-  /* Language */
+  /* ===================================================
+     SIDE MENU
+  =================================================== */
 
-  .language-container {
-    height: 35px;
-
-    padding: 0 7px;
-
-    border-radius: 10px;
+  .nav-links {
+    width: 220px;
   }
 
 
-  .language-icon {
-    font-size: 15px;
-  }
-
-
-  .goog-te-gadget .goog-te-combo {
-    font-size: 12px;
-
-    padding: 5px 20px 5px 4px;
-  }
-
-
-  /* WhatsApp */
+  /* ===================================================
+     WHATSAPP
+  =================================================== */
 
   .whatsapp-logo {
     width: 36px;
+
     height: 36px;
   }
 
-}
-.google-translate {
-  display: flex;
-  align-items: center;
-}
-
-.goog-te-gadget {
-  font-family: inherit !important;
-  font-size: 0 !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  margin: 0 !important;
-  padding: 6px 8px;
-
-  border: none;
-  outline: none;
-
-  background: transparent;
-
-  color: #1f6b3c;
-
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-
-  cursor: pointer;
-}
-
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
 }

@@ -1,29 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./About.css";
 import Navbar from "../Components/HomePageComponents/Navbar";
+import aboutVideo from "../assets/NATURAL VIDEO.mp4";
 
-import founder1 from "../assets/vamuskar.jpeg";
-import founder2 from "../assets/vamuskar.jpeg";
-import founder3 from "../assets/vamuskar.jpeg";
+import founder1 from "../assets/vamuskarh.jpeg";
+import founder2 from "../assets/vamuskarh.jpeg";
+import founder3 from "../assets/vamuskarh.jpeg";
 import Ac1 from "../Components/AboutPageComponents/Ac1";
 
 const About = () => {
 
-const founderImages = [founder1, founder2, founder3];
+  const founderImages = [founder1, founder2, founder3];
 
-const [currentFounder, setCurrentFounder] = useState(0);
+  const [currentFounder, setCurrentFounder] = useState(0);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentFounder((prev) => (prev + 1) % founderImages.length);
-  }, 3500);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFounder((prev) => (prev + 1) % founderImages.length);
+    }, 3500);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
+
+  // =====================================================
+  // VIDEO PLAY / PAUSE
+  // =====================================================
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    if (!videoRef.current) return;
+
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Hero */}
       {/* <section className="about-hero">
@@ -66,57 +85,93 @@ useEffect(() => {
 
           <span>Experience Our Spiritual Journey</span>
 
-          <h2>Inside Pothigai Atma Gnana Kudil</h2>
+          <h2>Inside Amirthalogam</h2>
 
           <p>
-            Take a glimpse into our peaceful surroundings, yoga sessions,
-            meditation practices, and community activities.
+            Amirthalogam - Spirtuality, Education & Social Services.
+            <br></br>
+            Amirthalogam Spirtual Practices, Social Welfare Centre, Pothigai Atma Gnana Kudil, Amirtheswarar IAS Academy & Nature Kingdom.
           </p>
 
         </div>
 
         <div className="video-container">
 
-          <iframe
-            src="https://www.youtube.com/embed/2OEL4P1Rz04"
-            title="Pothigai Atma Gnana Kudil"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <video
+            ref={videoRef}
+            src={aboutVideo}
+            className="about-video"
+            preload="metadata"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onClick={handlePlayPause}
+          >
+            Your browser does not support the video tag.
+          </video>
+
+          <button
+            className="video-play-btn"
+            onClick={handlePlayPause}
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+          >
+            {isPlaying ? "❚❚" : "▶"}
+          </button>
 
         </div>
 
       </section>
+
       <section className="founder-section">
 
-    <div className="founder-image">
+        <div className="founder-image">
 
-        <img
+          <img
             src={founderImages[currentFounder]}
             alt="Founder"
-        />
+          />
 
-    </div>
+        </div>
 
-    <div className="founder-content">
+        <div className="founder-content">
 
-        <span>Our Spiritual Founder</span>
+          <span>Our Spiritual Founder</span>
 
-        <h2>Pothigai Siddhar</h2>
+          <h2 translate="no">Thiru.Vamuskar Ayya (திரு.வமுஸ்கர் அய்யா)</h2>
 
-        <div className="founder-line"></div>
+          <div className="founder-line"></div>
 
-        <p>
-            Pothigai Siddhar founded Pothigai Atma Gnana Kudil with
+          <p translate="no">
+            Thiru.Vamuskar Ayya founded Amirthalogam with
             the vision of helping people discover inner peace,
             spiritual wisdom, and a life filled with compassion.
-            Through yoga, meditation, and selfless service, the
+            Through Yoga, Meditation,Education,Spirtual Practices and selfless services, the
             organization continues to inspire individuals of all ages.
-        </p>
+            <br></br>
+            One of our kudil's Devotee  dedicated a Tamil Venba to Thiru Vamuskar Ayya as a birthday wish.
+            <br></br>
 
-        <div className="founder-points">
+ஓம் ஸ்ரீ குருவே சரணம்
+<br></br>
 
-            <div>✓ Founder of Pothigai Atma Gnana Kudil</div>
+வமுசுகர் ஐயாவிற்கு இனிய பிறந்தநாள் வெண்பா வாழ்த்து
+<br></br>
+
+மத்தளம் பாறையில் மாதவன் ஆசிபெற்று சித்தர்கள் ஆட்சி செகத்தில் உதித்திட ஞானக் குடில்மூலம் ஞானத்தைப் போதிக்கும் ஞானி வமுசுகரை நாடு
+
+இறையுள் உணர்த்தும் இயற்கை பயிற்சி மறைபொருள் நீக்கி மனுக்கள் சிறக்க கனிவுடன் ஈந்து கரைசேர அருளும் அணியீசன் மைந்தனின் அன்பு
+
+இயற்கை வழியில் இறையருள் சேர செயற்கை விடுத்து செகமுமே மாறநல் வையகம் தோன்றவே வாழ்க்கை சிறந்திட ஐயன் வமுசுகர் வாழி
+
+வமுசுகர் ஐயா அறம் பொருள் இன்பம் வீடுபேறு பெற்று நலமும் வளமும் நாளும் பெற்று நாயகனாய் வாழ இனிய பிறந்தநாள் வாழ்த்துகள் வாழ்க பல்லாண்டு வாழ்க வளமோடு !!
+
+ஓம் ஸ்ரீ அகத்தீசாய நமோ நமஹா...
+
+By_Rama Nachiyappan ayya
+          </p>
+
+          <div className="founder-points">
+
+            <div>✓ Founder of Amithalogam & Pothigai Atma Gnana Kudil</div>
 
             <div>✓ Spiritual Teacher & Guide</div>
 
@@ -124,12 +179,22 @@ useEffect(() => {
 
             <div>✓ Dedicated to Community Service</div>
 
+          </div>
+        <a
+        style={{
+  display: "inline-block",
+  marginTop: "30px",
+}}
+  href="https://atmagnanakudil.blogspot.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  click here to explore detail
+</a>
         </div>
+      </section>
 
-    </div>
-
-</section>
-<Ac1/>
+      <Ac1 />
     </>
   );
 };

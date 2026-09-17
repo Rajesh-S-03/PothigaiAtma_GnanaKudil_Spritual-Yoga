@@ -6,7 +6,7 @@ import './HContent.css'
 import {FaBookOpen, FaHandHoldingHeart,} from "react-icons/fa";
 import { GiOpenBook } from "react-icons/gi";
 import { FaPeopleGroup,FaPersonPraying } from "react-icons/fa6";
-import { GiMeditation } from "react-icons/gi";
+import { GiLotus } from "react-icons/gi";
 import { MdGroups } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -15,11 +15,11 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-import kamuskarimg from '../../assets/vamuskar.jpeg'
+import kamuskarimg from '../../assets/vamuskarh.jpeg'
 import schoolTrainingImg from "../../assets/nathantha.jpg";
 import pasumaiImg from "../../assets/green.jpeg";
 import annadhanamImg from "../../assets/food2.png";
-import blanketImg from "../../assets/help1.png";
+import blanketImg from "../../assets/blanket.jpg";
 import onlineClassImg from "../../assets/onlineclass1.jpg";
 import meditationImg from "../../assets/sooryakalaimg.jpg";
 import Hcontent2 from './Hcontent2';
@@ -27,11 +27,11 @@ import Hcontent2 from './Hcontent2';
 
 const Hcontent1 = () => {
 const visionPoints = [
-  "Spread spiritual awareness and positive values",
-  "Promote inner peace through yoga and meditation",
-  "Guide young people with good values and life skills",
-  "Serve society through compassion and community support",
-  "Build a community filled with love, peace, and unity",
+  "Transformative Practice – Aims to create positive inner transformation.",
+  "Physical Harmony – Helps harmonize and balance the physical body.",
+  "Mental Calmness – Helps quiet the restless and distracted mind.",
+  "Inner Awareness – Encourages deeper self-awareness and inner peace.",
+  "Holistic Well-being – Brings harmony between the body, mind, and inner self.",
 ];
 
 const [activeEvent, setActiveEvent] = useState(0);
@@ -100,7 +100,7 @@ const nextEvent = () => {
     <div className='Hcontent1-container'>
        <div className="service-logos">
   <div className="service-card">
-    <GiMeditation className="service-card-logo" />
+    <GiLotus className="service-card-logo" />
 
     <div className="contents">
       <h3>Yogam & Meditation</h3>

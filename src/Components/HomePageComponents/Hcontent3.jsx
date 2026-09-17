@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaQuoteLeft,
   FaChevronLeft,
@@ -22,42 +23,52 @@ import annadhanamImg from "../../assets/food1.png";
 import studentTrainingImg from "../../assets/students2.png";
 import healthSupportImg from "../../assets/health.png";
 import greeneryImg from "../../assets/green.jpeg";
-import { Link } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 const Hcontent3 = () => {
+  const location = useLocation();
 
-const handleSubmit = async (e) => {
+useEffect(() => {
+  if (location.state?.scrollToRegister) {
+    const timer = setTimeout(() => {
+      const registerSection = document.getElementById("register");
+
+      if (registerSection) {
+        registerSection.scrollIntoView({
+          block: "start",
+        });
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }
+}, [location.state]);
+
+const handleSubmit = (e) => {
   e.preventDefault();
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    phone: e.target.phone.value,
-    city: e.target.city.value,
-    message:
-      "I am interested in learning more about your programs and would like to get in touch with your team. Please contact me at your earliest convenience.",
-  };
+  const name = e.target.name.value;
+  const email = e.target.email.value;
+  const phone = e.target.phone.value;
+  const city = e.target.city.value;
 
-  try {
-    await emailjs.send(
-      "service_9s8ui68",
-      "template_suosx7h",
-      formData,
-      "YM4b6nUa_P6PBJ-mY"
-    );
+  const subject = "Registration Interest - Amirthalogam";
 
-    alert("Registration submitted successfully!");
+  const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+City: ${city}
 
-    e.target.reset();
-  } catch (error) {
-  console.error("EmailJS Error:", error);
+Message:
+I am interested in learning more about your programs and would like to get in touch with your team. Please contact me at your earliest convenience.
+  `;
 
-  alert(
-    `Failed to send registration.\n\nStatus: ${
-      error?.status || "Unknown"
-    }\nMessage: ${error?.text || error?.message || "Unknown error"}`
-  );
-}
+  const mailtoLink = `mailto:amirthalogam@gmail.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
+
+  e.target.reset();
 };
   const socialActivities = [
     {
@@ -88,57 +99,57 @@ const handleSubmit = async (e) => {
 
   const testimonials = [
     {
-      name: "S. Meenakshi",
+      name: "By Damayanti Amma",
       role: "Spiritual Training Participant",
       message:
-        "The spiritual training sessions helped me bring more peace, discipline, and positive thinking into my daily life.",
+        "Om Shri Guruve Saranam We all in this universe are full of divine energy, Guru energy, nectar energy, and when we practice Panchabhuta Amritha Yoga daily, we can feel it. Today's Panchabhuta Amritha practice is very good. I am very grateful to Guru Sir Vamuskar Sir. Narpavi Sir.",
       initial: "M",
     },
     {
-      name: "R. Karthik",
+      name: "By. Manjula Amma",
       role: "Online Program Participant",
       message:
-        "Even through online sessions, I felt connected and guided. The meditation practices helped me stay calm and focused.",
+        "Dear friends...For those of you who are practicing the natural worship that our guide and guru, Mr. Vamuskar, will surely be supported by Jesus and the Siddhas and will continue to guide us in this life.Those who have failed to do this, have made many promises, like a parrot telling a parrot how a human being should live in this world.If you live as he said, you can easily escape from this suffering.Take advantage and help all souls reach the shore. ",
       initial: "K",
     },
-    {
-      name: "V. Lakshmi",
-      role: "Community Service Volunteer",
-      message:
-        "Being part of the social service activities gave me a meaningful opportunity to serve people with compassion.",
-      initial: "L",
-    },
-    {
-      name: "A. Praveen",
-      role: "Yoga Training Participant",
-      message:
-        "The yoga and self-awareness practices improved my routine and helped me understand the value of inner balance.",
-      initial: "P",
-    },
+    // {
+    //   name: "V. Lakshmi",
+    //   role: "Community Service Volunteer",
+    //   message:
+    //     "Being part of the social service activities gave me a meaningful opportunity to serve people with compassion.",
+    //   initial: "L",
+    // },
+    // {
+    //   name: "A. Praveen",
+    //   role: "Yoga Training Participant",
+    //   message:
+    //     "The yoga and self-awareness practices improved my routine and helped me understand the value of inner balance.",
+    //   initial: "P",
+    // },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+const [activeIndex, setActiveIndex] = useState(0);
 
-  const showPrevious = () => {
-    setActiveIndex((previousIndex) =>
-      previousIndex - 2 < 0
-        ? testimonials.length - 2
-        : previousIndex - 2
-    );
-  };
+const showPrevious = () => {
+  setActiveIndex((previousIndex) =>
+    previousIndex === 0
+      ? testimonials.length - 1
+      : previousIndex - 1
+  );
+};
 
-  const showNext = () => {
-    setActiveIndex((previousIndex) =>
-      previousIndex + 2 >= testimonials.length
-        ? 0
-        : previousIndex + 2
-    );
-  };
+const showNext = () => {
+  setActiveIndex((previousIndex) =>
+    previousIndex === testimonials.length - 1
+      ? 0
+      : previousIndex + 1
+  );
+};
 
-  const visibleTestimonials = [
-    testimonials[activeIndex],
-    testimonials[(activeIndex + 1) % testimonials.length],
-  ];
+const visibleTestimonials = [
+  testimonials[activeIndex],
+  testimonials[(activeIndex + 1) % testimonials.length],
+];
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -240,23 +251,23 @@ const handleSubmit = async (e) => {
           </button>
         </div>
 
-        <div className="testimonial-dots">
-          <button
-            className={`testimonial-dot ${
-              activeIndex === 0 ? "active-testimonial-dot" : ""
-            }`}
-            onClick={() => setActiveIndex(0)}
-            aria-label="Show first testimonials"
-          ></button>
+       <div className="testimonial-dots">
+  <button
+    className={`testimonial-dot ${
+      activeIndex === 0 ? "active-testimonial-dot" : ""
+    }`}
+    onClick={() => setActiveIndex(0)}
+    aria-label="Show first testimonial"
+  ></button>
 
-          <button
-            className={`testimonial-dot ${
-              activeIndex === 2 ? "active-testimonial-dot" : ""
-            }`}
-            onClick={() => setActiveIndex(2)}
-            aria-label="Show second testimonials"
-          ></button>
-        </div>
+  <button
+    className={`testimonial-dot ${
+      activeIndex === 1 ? "active-testimonial-dot" : ""
+    }`}
+    onClick={() => setActiveIndex(1)}
+    aria-label="Show second testimonial"
+  ></button>
+</div>
       </section>
 
 
@@ -295,7 +306,7 @@ const handleSubmit = async (e) => {
     <h3>Register Your Interest</h3>
     <p>Fill in your details and our team will contact you.</p>
 
-    <form className="register-form" id="register" onSubmit={handleSubmit}>
+    <form className="register-form" id="register-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="name">Full Name</label>
         <input
@@ -353,7 +364,7 @@ const handleSubmit = async (e) => {
       <div className="footer-top">
         {/* Organization Details */}
         <div className="footer-column footer-about">
-          <h2>Pothigai Atma Gnana Kudil</h2>
+          <h2>Amirthalogam</h2>
 
           <div className="footer-title-line"></div>
 
@@ -449,13 +460,13 @@ const handleSubmit = async (e) => {
 
           <div className="footer-contact-item">
             <FaPhoneAlt />
-            <a href="tel:7010700773">+91 70107 00773</a>
+            <a href="tel:8300366411">+918300366411 </a>
           </div>
 
           <div className="footer-contact-item">
             <FaEnvelope />
-            <a href="mailto:pothigaiagk@gmail.com">
-              pothigaiagk@gmail.com
+            <a href="mailto:amirthalogam@gmail.com">
+              amirthalogam@gmail.com
             </a>
           </div>
         </div>
@@ -463,7 +474,7 @@ const handleSubmit = async (e) => {
 
       <div className="footer-bottom">
         <p>
-          © {new Date().getFullYear()} Pothigai Atma Gnana Kudil. All Rights
+          © {new Date().getFullYear()} Amirthalogam. All Rights
           Reserved.
         </p>
 

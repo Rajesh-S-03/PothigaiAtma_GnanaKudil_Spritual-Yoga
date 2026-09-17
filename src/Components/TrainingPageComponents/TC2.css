@@ -47,21 +47,23 @@
   color: #666;
 }
 
-
-/* =========================
-   SCROLL AREA
-========================= */
-
 .programs-wrapper {
+  position: relative;
+
   width: 100%;
+
   overflow: hidden;
 }
 
 .programs-scroll {
   display: flex;
+
   gap: 25px;
+
   overflow-x: auto;
+
   padding: 10px 6%;
+
   scroll-behavior: smooth;
 
   scrollbar-width: none;
@@ -70,7 +72,132 @@
 .programs-scroll::-webkit-scrollbar {
   display: none;
 }
+/* =========================
+   CARD ARROWS
+========================= */
 
+.program-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(139, 30, 45, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #8b1e2d;
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* LEFT */
+
+.program-arrow-left {
+  left: 20px;
+}
+
+
+/* RIGHT */
+
+.program-arrow-right {
+  right: 20px;
+}
+
+
+/* HOVER */
+
+.program-arrow:hover {
+  background: #8b1e2d;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* CLICK */
+
+.program-arrow:active {
+  transform:
+    translateY(-50%)
+    scale(0.95);
+}
+@media (max-width: 768px) {
+
+  .program-arrow {
+    width: 42px;
+    height: 42px;
+
+    font-size: 21px;
+  }
+
+  .program-arrow-left {
+    left: 8px;
+  }
+
+  .program-arrow-right {
+    right: 8px;
+  }
+
+  .programs-scroll {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .program-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+
+  .program-arrow-left {
+    left: 5px;
+  }
+
+  .program-arrow-right {
+    right: 5px;
+  }
+
+  .programs-scroll {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 
 /* =========================
    CARD
@@ -282,7 +409,7 @@
 
   .programs-scroll {
     gap: 18px;
-    padding: 5px 20px;
+    padding: 10px 30px;
   }
 
   .program-card {

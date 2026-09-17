@@ -38,7 +38,7 @@ const Home = () => {
 };  
   return (
     <div className="container">
-      <Navbar/>  
+      {/* <Navbar/>   */}
       <section
   className="b-content"
   id="home"
@@ -47,15 +47,14 @@ const Home = () => {
   <div className="hero-overlay"></div>
 
   <div className="hero-text">
-    <p className="hero-subtitle">அமைதி • ஆன்மிகம் • நல்வாழ்வு</p>
+    <p className="hero-subtitle">Peace * Spirituality * A Good Life</p>
 
-    <h1>அமிர்தலோகம்</h1>
+    <h1>Amirthalogam</h1>
 
     <p>
-      மன அமைதி, ஆன்மிக வளர்ச்சி மற்றும் சமூக நலனுக்கான
-      ஒரு அமைதியான பயணம்.
+      We warmly welcome you to Amirthalogam. Welcome.
     </p>
-    <Link to="/about" className="hero-btn">மேலும் அறிய</Link>
+    <Link to="/about" className="hero-btn">Know More</Link>
   </div>
 </section>
 
@@ -68,9 +67,7 @@ const Home = () => {
     <p className="about-description" style={{paddingTop:20}}>
        Our purpose is to nurture peace of mind, physical well-being, and a
   balanced way of life through yoga, meditation, and spiritual guidance.
-  Mindful movement, breathing practices, and meditation can support stress
-  management, focus, emotional balance, better sleep, and healthy daily
-  routines.
+  Amirthalogam Spiritual Yoga is a transformative practice designed to harmonize the physical body, quiet the restless mind, and awaken inner spiritual consciousness.
     </p>
   </div>
   <section className="wellness-section">

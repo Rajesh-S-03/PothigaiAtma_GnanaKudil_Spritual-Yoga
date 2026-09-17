@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../HomePageComponents/Navbar";
 import "./Ec1.css";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../HomePageComponents/Navbar";
 
 const Ec1 = () => {
+
+    const navigate = useNavigate();
+  
+    const goToRegister = () => {
+      navigate("/", {
+        state: {
+          scrollToRegister: true,
+        },
+      });
+    };
   // =========================
   // UPCOMING EVENTS
   // =========================
@@ -10,85 +21,85 @@ const Ec1 = () => {
   const upcomingEvents = [
     {
       id: 1,
-      day: "ஒவ்வொரு",
-      month: "ஞாயிறு",
-      year: "வாரம்",
-      title: "பஞ்சபூத யோகம்",
-      category: "வாராந்திர நிகழ்வு",
+      day: "Every",
+      month: "Sunday",
+      year: "Week",
+      title: "Pancha Bhoota Amirtha Yogam",
+      category: "Weekly Event",
       description:
-        "ஒவ்வொரு ஞாயிற்றுக்கிழமையும் அமிர்த உலகத்திற்கான அடிப்படை பயிற்சியாக பஞ்சபூத யோகம் பயிற்சி அளிக்கப்படும். இதில் தேர்ச்சி பெற்றவர்களுக்கு அடுத்தடுத்த மாதாந்திர மற்றும் வருடாந்திர அருள் உலக பயிற்சிகள் அளிக்கப்படும்.",
-      time: "ஒவ்வொரு ஞாயிற்றுக்கிழமையும்",
-      location: "அமிர்த உலகம்",
+        "Every Sunday, Pancha Bhoota Yogam is taught as the foundational training for Amirtha Ulagam. Those who master this will go on to receive the subsequent monthly and annual Arul Ulaga trainings.",
+      time: "Every Sunday",
+      location: "Amirtha Ulagam",
       date: "2026-09-13T06:00:00",
     },
 
     {
       id: 2,
       day: "01",
-      month: "வியாழன்",
-      year: "மாதம்",
-      title: "சதுர் வியாழப் பயிற்சிகள்",
-      category: "மாதாந்திர நிகழ்வு",
+      month: "Thursday",
+      year: "Month",
+      title: "Four Thursdays Training",
+      category: "Monthly Event",
       description:
-        "ஒவ்வொரு தமிழ் மாத வியாழக்கிழமையும் சித்தர்கள் அருள் உலக பயிற்சிகள் அளிக்கப்படும். முதல் வியாழன் – சூரிய கால யோகம், இரண்டாம் வியாழன் – சந்திர கால யோகம், மூன்றாம் வியாழன் – நாதாந்த யோகம், நான்காம் வியாழன் – ஆதார சக்கர மலர்ச்சி யோகம்.",
-      time: "ஒவ்வொரு தமிழ் மாத வியாழக்கிழமையும்",
-      location: "அமிர்த உலகம்",
+        "On every Thursday of the Tamil month, the Siddhars' Arul Ulaga trainings are given. First Thursday – Surya Kala Yogam, Second Thursday – Chandra Kala Yogam, Third Thursday – Nadhantha Yogam, Fourth Thursday – Adhara Chakra Blossoming Yogam.",
+      time: "Every Thursday of the Tamil month",
+      location: "Amirtha Ulagam",
       date: "2026-09-17T06:00:00",
     },
 
     {
       id: 3,
-      day: "பௌர்",
-      month: "ணமி",
-      year: "காலம்",
-      title: "பூரணி கால கூட்டு வழிபாடு",
-      category: "மாதாந்திர நிகழ்வு",
+      day: "Full",
+      month: "Moon",
+      year: "Time",
+      title: "Full Moon Group Worship",
+      category: "Monthly Event",
       description:
-        "ஒவ்வொரு தமிழ் மாத பௌர்ணமி காலங்களிலும் சித்தர்கள் அருள் உலகத்திற்கான கூட்டு வழிபாடு நிகழ்வு அமைந்திருக்கும்.",
-      time: "ஒவ்வொரு தமிழ் மாத பௌர்ணமி காலம்",
-      location: "அமிர்த உலகம்",
+        "On every Full Moon day of the Tamil month, a group worship event for the Siddhars' Arul Ulagam is held.",
+      time: "Every Full Moon day of the Tamil month",
+      location: "Amirtha Ulagam",
       date: "2026-09-26T18:00:00",
     },
 
     {
       id: 4,
-      day: "காந்த",
-      month: "அமிர்த",
-      year: "யோகம்",
-      title: "காந்தாமிர்த யோகம்",
-      category: "மாதாந்திர நிகழ்வு",
+      day: "Kaantha",
+      month: "Amirtha",
+      year: "Yogam",
+      title: "Kaantha Amirtha Yogam",
+      category: "Monthly Event",
       description:
-        "சூரிய காந்த அமிர்த யோகம் – ஒவ்வொரு தமிழ் மாத பௌர்ணமி கால காலை வேளையில் பயிற்சி அளிக்கப்படும். சந்திர காந்த அமிர்த யோகம் – ஒவ்வொரு பௌர்ணமி கால மாலை வேளையில் பயிற்சி அளிக்கப்படும். அக்னி காந்த அமிர்த யோகம் – ஒவ்வொரு தமிழ் அமாவாசை கால மதிய வேளையில் பயிற்சி அளிக்கப்படும்.",
-      time: "காலை / மாலை / மதியம்",
-      location: "அமிர்த உலகம்",
+        "Surya Kantha Amirtha Yogam – trained every Full Moon morning of the Tamil month. Chandra Kantha Amirtha Yogam – trained every Full Moon evening. Agni Kantha Amirtha Yogam – trained every New Moon noon of the Tamil month.",
+      time: "Morning / Evening / Noon",
+      location: "Amirtha Ulagam",
       date: "2026-09-26T06:00:00",
     },
 
     {
       id: 5,
-      day: "சூரிய",
-      month: "கிரகணம்",
-      year: "வருடாந்திரம்",
-      title: "பிரபஞ்ச காந்தாமிர்த யோகம்",
-      category: "வருடாந்திர நிகழ்வு",
+      day: "Solar",
+      month: "Eclipse",
+      year: "Annual",
+      title: "Cosmic Kaantha amirtha Yogam",
+      category: "Annual Event",
       description:
-        "ஒவ்வொரு ஆண்டின் சூரிய கிரகண காலங்களில் ஆடவர்களுக்கான பிரத்யேக பிரபஞ்ச காந்தாமிர்த யோகம் பயிற்சி அளிக்கப்படும்.",
-      time: "சூரிய கிரகண காலம்",
-      location: "அமிர்த உலகம்",
+        "During each year's solar eclipse periods, a special Cosmic Kanthamirtha Yogam training is given for men.",
+      time: "Solar eclipse period",
+      location: "Amirtha Ulagam",
       date: "2026-09-01T06:00:00",
     },
 
     {
       id: 6,
-      day: "சந்திர",
-      month: "கிரகணம்",
-      year: "வருடாந்திரம்",
-      title: "பிரபஞ்ச காந்தாமிர்த யோகம்",
-      category: "வருடாந்திர நிகழ்வு",
+      day: "Lunar",
+      month: "Eclipse",
+      year: "Annual",
+      title: "Cosmic Kaantha amirtha Yogam",
+      category: "Annual Event",
       description:
-        "ஒவ்வொரு ஆண்டின் சந்திர கிரகண காலங்களில் பெண்களுக்கான பிரத்யேக பிரபஞ்ச காந்தாமிர்த யோகம் பயிற்சி அளிக்கப்படும்.",
-      time: "சந்திர கிரகண காலம்",
-      location: "அமிர்த உலகம்",
+        "During each year's lunar eclipse periods, a special Cosmic Kanthamirtha Yogam training is given for women.",
+      time: "Lunar eclipse period",
+      location: "Amirtha Ulagam",
       date: "2026-09-01T18:00:00",
     },
   ];
@@ -100,45 +111,45 @@ const Ec1 = () => {
   const pastEvents = [
     {
       id: 1,
-      title: "சூரிய கால யோகம்",
-      date: "முதல் வியாழன்",
-      category: "சதுர் வியாழப் பயிற்சி",
+      title: "Surya Kaala Yogam",
+      date: "First Thursday",
+      category: "Four Thursdays Training",
     },
     {
       id: 2,
-      title: "சந்திர கால யோகம்",
-      date: "இரண்டாம் வியாழன்",
-      category: "சதுர் வியாழப் பயிற்சி",
+      title: "Chandra Kaala Yogam",
+      date: "Second Thursday",
+      category: "Four Thursdays Training",
     },
     {
       id: 3,
-      title: "நாதாந்த யோகம்",
-      date: "மூன்றாம் வியாழன்",
-      category: "சதுர் வியாழப் பயிற்சி",
+      title: "Naadhantha Yogam",
+      date: "Third Thursday",
+      category: "Four Thursdays Training",
     },
     {
       id: 4,
-      title: "ஆதார சக்கர மலர்ச்சி யோகம்",
-      date: "நான்காம் வியாழன்",
-      category: "சதுர் வியாழப் பயிற்சி",
+      title: "Adhara Chakra Blossoming Yogam",
+      date: "Fourth Thursday",
+      category: "Four Thursdays Training",
     },
     {
       id: 5,
-      title: "சூரிய காந்த அமிர்த யோகம்",
-      date: "பௌர்ணமி – காலை",
-      category: "காந்தாமிர்த யோகம்",
+      title: "Surya Kaantha Amirtha Yogam",
+      date: "Full Moon – Morning",
+      category: "Kanthamirtha Yogam",
     },
     {
       id: 6,
-      title: "சந்திர காந்த அமிர்த யோகம்",
-      date: "பௌர்ணமி – மாலை",
-      category: "காந்தாமிர்த யோகம்",
+      title: "Chandra Kaantha Amirtha Yogam",
+      date: "Full Moon – Evening",
+      category: "Kanthamirtha Yogam",
     },
     {
       id: 7,
-      title: "அக்னி காந்த அமிர்த யோகம்",
-      date: "அமாவாசை – மதியம்",
-      category: "காந்தாமிர்த யோகம்",
+      title: "Agni Kaantha Amirtha Yogam",
+      date: "New Moon – Noon",
+      category: "Kanthamirtha Yogam",
     },
   ];
 
@@ -194,7 +205,7 @@ const Ec1 = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar/> */}
 
       <main className="events-page">
 
@@ -210,24 +221,24 @@ const Ec1 = () => {
           <div className="events-hero-content">
 
             <span className="events-label">
-              ✦ அமிர்த உலக நிகழ்வுகள் ✦
+              ✦ Amirtha Ulaga Events ✦
             </span>
 
             <h1>
-              அமிர்த உலக <strong>நிகழ்வுகள்</strong>
+              Amirtha Ulaga <strong>Events</strong>
             </h1>
 
             <p>
-              வாராந்திர, மாதாந்திர மற்றும் வருடாந்திர அருள் உலக
-              பயிற்சிகள் மற்றும் ஆன்மீக நிகழ்வுகளில் இணைந்து
-              அருள் அனுபவத்தை பெறுங்கள்.
+              Join our weekly, monthly, and annual Arul Ulaga
+              trainings and spiritual events to receive the
+              experience of grace.
             </p>
 
             <a
               href="#upcoming-events"
               className="events-hero-btn"
             >
-              நிகழ்வுகளை காண்க
+              View Events
               <span>↓</span>
             </a>
 
@@ -243,18 +254,18 @@ const Ec1 = () => {
 
         <section className="events-intro">
 
-          <span>அமிர்த உலக நிகழ்வுகள்</span>
+          <span>Amirtha Ulaga Events</span>
 
           <h2>
-            அருள் உலக <strong>நிகழ்வுகள்</strong>
+            Arul Ulaga <strong>Events</strong>
           </h2>
 
           <p>
-            ஓம் ஸ்ரீ குருவே சரணம் 🙏
+            Om Sri Guruve Saranam 🙏
             <br />
-            நற்பவி 🙏
+            Natpavi 🙏
             <br />
-            ஓம் ஸ்ரீ அகத்தீசாய நமோ நமஹா 🌸🙏🌸
+            Om Sri Agathisaya Namo Namaha 🌸🙏🌸
           </p>
 
         </section>
@@ -271,16 +282,16 @@ const Ec1 = () => {
 
           <div className="section-title">
 
-            <span>அமிர்த உலக நிகழ்வுகள்</span>
+            <span>Amirtha Ulaga Events</span>
 
             <h2>
-              வாராந்திர & <strong>மாதாந்திர நிகழ்வுகள்</strong>
+              Weekly & <strong>Monthly Events</strong>
             </h2>
 
             <p>
-              அமிர்த உலகத்திற்கான அடிப்படை பயிற்சிகள்,
-              சித்தர்கள் அருள் உலக பயிற்சிகள் மற்றும்
-              கூட்டு வழிபாட்டு நிகழ்வுகள் நடைபெறும்.
+              Foundational trainings for Amirtha Ulagam, the
+              Siddhars' Arul Ulaga trainings, and group worship
+              events take place here.
             </p>
 
           </div>
@@ -293,7 +304,7 @@ const Ec1 = () => {
             <div className="next-event-content">
 
               <span className="next-event-label">
-                அடுத்த நிகழ்வு
+                Next Event
               </span>
 
               <h3>
@@ -312,7 +323,7 @@ const Ec1 = () => {
               {timeLeft.expired ? (
 
                 <div className="event-live">
-                  பயிற்சி நடைபெறுகிறது
+                  Training in progress
                 </div>
 
               ) : (
@@ -320,22 +331,22 @@ const Ec1 = () => {
                 <>
                   <div className="count-box">
                     <strong>{timeLeft.days || 0}</strong>
-                    <span>நாட்கள்</span>
+                    <span>Days</span>
                   </div>
 
                   <div className="count-box">
                     <strong>{timeLeft.hours || 0}</strong>
-                    <span>மணிநேரம்</span>
+                    <span>Hours</span>
                   </div>
 
                   <div className="count-box">
                     <strong>{timeLeft.minutes || 0}</strong>
-                    <span>நிமிடங்கள்</span>
+                    <span>Minutes</span>
                   </div>
 
                   <div className="count-box">
                     <strong>{timeLeft.seconds || 0}</strong>
-                    <span>விநாடிகள்</span>
+                    <span>Seconds</span>
                   </div>
                 </>
 
@@ -402,17 +413,13 @@ const Ec1 = () => {
                   </div>
 
 
-                  <button
-                    className="register-btn"
-                    onClick={() =>
-                      alert(
-                        `${event.title} நிகழ்விற்கான பதிவு விரைவில் தொடங்கும்.`
-                      )
-                    }
-                  >
-                    பதிவு செய்ய
-                    <span>→</span>
-                  </button>
+                 <button
+              type="button"
+              className="buy-book-btn"
+              onClick={goToRegister}
+            >
+              Register Here
+            </button>
 
                 </div>
 
@@ -436,11 +443,11 @@ const Ec1 = () => {
           </div>
 
           <blockquote>
-            "ஓம் ஸ்ரீ குருவே சரணம்"
+            "Om Sri Guruve Saranam"
           </blockquote>
 
           <span>
-            🙏 நற்பவி 🙏
+            🙏 Natpavi 🙏
           </span>
 
         </section>
@@ -454,16 +461,15 @@ const Ec1 = () => {
 
           <div className="section-title">
 
-            <span>அருள் உலக பயிற்சிகள்</span>
+            <span>Arul Ulaga Trainings</span>
 
             <h2>
-              சதுர் வியாழ & <strong>காந்தாமிர்த யோகங்கள்</strong>
+              Four Thursdays & <strong>Kanthamirtha Yogams</strong>
             </h2>
 
             <p>
-              சித்தர்கள் அருள் உலகத்திற்கான பல்வேறு
-              யோகப் பயிற்சிகள் மற்றும் காந்தாமிர்த யோகப்
-              பயிற்சிகள்.
+              Various yoga trainings and Kanthamirtha Yogam
+              trainings for the Siddhars' Arul Ulagam.
             </p>
 
           </div>
@@ -515,16 +521,16 @@ const Ec1 = () => {
 
           <div className="section-title">
 
-            <span>ஓம் சத்குரு ஸ்ரீ காகபுஜண்ட தேவாய நமஹ 🌸🙏🌸</span>
+            <span>Om Sathguru Sri Kakabhujandar Devaya Namaha 🌸🙏🌸</span>
 
             <h2>
-              வருடாந்திர <strong>நிகழ்வுகள்</strong>
+              Annual <strong>Events</strong>
             </h2>
 
             <p>
-              ஒவ்வொரு ஆண்டின் சூரிய மற்றும் சந்திர கிரகண
-              காலங்களில் பிரத்யேக பிரபஞ்ச காந்தாமிர்த யோகம்
-              பயிற்சிகள் அளிக்கப்படும்.
+              Special Cosmic Kanthamirtha Yogam trainings are
+              given during each year's solar and lunar eclipse
+              periods.
             </p>
 
           </div>
@@ -541,16 +547,16 @@ const Ec1 = () => {
               <div>
 
                 <span>
-                  சூரிய கிரகண காலம்
+                  Solar Eclipse Time
                 </span>
 
                 <h3>
-                  சூரிய கிரகண கால பிரபஞ்ச காந்தாமிர்த யோகம்
+                  Solar Eclipse Time Cosmic Kanthamirtha Yogam
                 </h3>
 
                 <p>
-                  ஆடவர்களுக்கான பிரத்யேக பிரபஞ்ச
-                  காந்தாமிர்த யோகம் பயிற்சி
+                  Special Cosmic Kanthamirtha Yogam training
+                  for men
                 </p>
 
               </div>
@@ -567,16 +573,16 @@ const Ec1 = () => {
               <div>
 
                 <span>
-                  சந்திர கிரகண காலம்
+                  Lunar Eclipse Time
                 </span>
 
                 <h3>
-                  சந்திர கிரகண கால பிரபஞ்ச காந்தாமிர்த யோகம்
+                  Lunar Eclipse Time Cosmic Kanthamirtha Yogam
                 </h3>
 
                 <p>
-                  பெண்களுக்கான பிரத்யேக பிரபஞ்ச
-                  காந்தாமிர்த யோகம் பயிற்சி
+                  Special Cosmic Kanthamirtha Yogam training
+                  for women
                 </p>
 
               </div>
@@ -600,12 +606,12 @@ const Ec1 = () => {
         <div className="footer-content">
 
           <p>
-            © {new Date().getFullYear()} Pothigai Atma Gnana Kudil.
+            © {new Date().getFullYear()} Amirthalogam
             All Rights Reserved.
           </p>
 
           <a href="mailto:info@pothigaiatma.org">
-            ✉ info@pothigaiatma.org
+            ✉ amirthalogam@gmail.com
           </a>
 
         </div>

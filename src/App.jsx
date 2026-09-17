@@ -8,12 +8,14 @@ import ScrollTop from './Components/ScrollTop'
 
 import { Routes,Router, Route } from 'react-router-dom'
 import Gc1 from './Components/Gallery/Gc1'
+import Navbar from './Components/HomePageComponents/Navbar'
 
 function App() {
 
   return (
     <>
     <ScrollTop/>
+    <Navbar/>
     <Routes>
       <Route path="/" element ={ <Home/>}/>
       <Route path="/about" element={ <About/>}/>

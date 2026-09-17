@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./TC2.css";
+import { useRef } from "react";
 
 
 import mathematics from "../../assets/lifemaths.jpg";
@@ -17,6 +18,16 @@ import TC3 from "./TC3";
 
 const TC2 = () => {
   const navigate = useNavigate();
+  const programsScrollRef = useRef(null);
+    const scrollCards = (direction) => {
+    if (programsScrollRef.current) {
+      const scrollAmount = 320;
+       programsScrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };  
 
   const programs = [
     {
@@ -106,49 +117,64 @@ const TC2 = () => {
         </h2>
 
         <p>
-          Discover meaningful programs designed to develop knowledge,
-          creativity, practical skills, and a better understanding of life.
+          Amirthalogam Basic Education integrates functional literacy with practical daily application across four core pillars:
         </p>
       </div>
 
       {/* Cards */}
-      <div className="programs-wrapper">
-        <div className="programs-scroll">
+     {/* Cards */}
+<div className="programs-wrapper">
 
-          {programs.map((item) => (
-            <div className="program-card" key={item.id}>
+  {/* LEFT ARROW */}
+  <button
+    className="program-arrow program-arrow-left"
+    onClick={() => scrollCards("left")}
+    aria-label="Previous programs"
+  >
+    &#10094;
+  </button>
 
-              {/* Image */}
-              <div className="program-image">
-                <img src={item.image} alt={item.title} />
+  <div
+    className="programs-scroll"
+    ref={programsScrollRef}
+  >
 
-                <span className="program-number">
-                  {String(item.id).padStart(2, "0")}
-                </span>
-              </div>
+    {programs.map((item) => (
+      <div className="program-card" key={item.id}>
 
-              {/* Content */}
-              <div className="program-content">
+        {/* Image */}
+        <div className="program-image">
+          <img src={item.image} alt={item.title} />
 
-                <h3>{item.title}</h3>
+          <span className="program-number">
+            {String(item.id).padStart(2, "0")}
+          </span>
+        </div>
 
-                <p>{item.description}</p>
+        {/* Content */}
+        <div className="program-content">
 
-                <button
-                  onClick={() => navigate("/programs")}
-                  className="program-btn"
-                >
-                  Learn More
-                  <span>→</span>
-                </button>
+          <h3>{item.title}</h3>
 
-              </div>
-
-            </div>
-          ))}
+          <p>{item.description}</p>
 
         </div>
+
       </div>
+    ))}
+
+  </div>
+
+  {/* RIGHT ARROW */}
+  <button
+    className="program-arrow program-arrow-right"
+    onClick={() => scrollCards("right")}
+    aria-label="Next programs"
+  >
+    &#10095;
+  </button>
+
+</div>
 
 
     </section>
